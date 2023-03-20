@@ -28,11 +28,12 @@ nav {
 }
 .hero {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   background-color: black;
   border-radius: 1rem;
   margin: 0 0.4rem;
+  height: 88vh;
 }
 .description {
   display: flex;
@@ -49,26 +50,47 @@ nav {
 .description span {
   color: rgb(224, 0, 0);
 }
+.description h1 span {
+  text-shadow: 10px 10px 25px rgb(224, 0, 0);
+  animation: glow-red 3s ease-in-out infinite alternate;
+}
 .description h1 {
   font-size: xx-large;
   text-align: center;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid white;
+  text-shadow: 10px 10px 30px white;
 }
 .description button {
-  background-color: rgb(99, 99, 99);
+  background-color: bisque;
   width: 25%;
   height: 10%;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border-radius: 0.5rem;
-  font-size: large;
-  transition: all 0.5s ease-in-out;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 3px;
 }
 .description button:hover {
   background-color: rgb(224, 0, 0);
+  color: white;
+}
+.description button:active {
+  background-color: rgb(109, 0, 0);
 }
 .hero img {
   margin-right: 5rem;
   width: 50rem;
   height: 40rem;
+}
+
+@keyframes glow-red {
+  from {
+    text-shadow: 10px 10px 25px rgb(224, 0, 0);
+  }
+  to {
+    text-shadow: 0 0 50px #fff, 0 0 3px rgb(224, 0, 0), 0 0 4px rgb(224, 0, 0),
+      0 0 5px rgb(224, 0, 0), 0 0 6px rgb(224, 0, 0), 0 0 7px rgb(224, 0, 0),
+      0 0 10px rgb(224, 0, 0);
+  }
 }
