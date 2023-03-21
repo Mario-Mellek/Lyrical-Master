@@ -15,17 +15,30 @@ form #song {
   font-weight: 600;
   letter-spacing: 0.5px;
   font-family: cursive, sans-serif;
-  border-radius: 0.5rem;
 }
 
-.form-btn {
-  background-color: bisque;
-  width: fit-content;
-  height: 20%;
-  color: rgb(0, 0, 0);
+form .form-btn {
+  height: 25%;
+}
+
+.text-cont {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 0 0.5rem;
   border-radius: 0.5rem;
-  font-size: 1em;
-  transition: all 0.3s ease-in-out;
-  letter-spacing: 3px;
-  padding: 0.5rem;
+}
+.text-cont input:focus,
+.text-cont input:active {
+  outline: none;
+}
+.text-cont input {
+  border: none;
+}
+form .mic {
+  height: 90%;
+  border-radius: 50%;
+}
+form .mic-icon {
+  font-size: 40px;
 }

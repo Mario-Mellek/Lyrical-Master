@@ -2,9 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Search.css';
 import Logo from '../utils/lm.png';
+import { IoMdMicrophone } from 'react-icons/io';
 
 
 export default function Search() {
+  const handlemic = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <header>
@@ -25,7 +29,10 @@ export default function Search() {
         <div className='description'>
           <h1>Lyrical<span>Master</span></h1>
           <form>
-            <input type="text" name="song" id="song" placeholder='Search by artist or song name' />
+            <div className='text-cont'>
+              <input type="text" name="song" id="song" placeholder='Search by artist or song name' />
+              <button onClick={e => handlemic(e)} className='mic' title='press to speak'><IoMdMicrophone className='mic-icon' /></button>
+            </div>
             <input className='form-btn' type="button" value="Search" />
           </form>
         </div>

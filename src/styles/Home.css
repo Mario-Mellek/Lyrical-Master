@@ -71,7 +71,8 @@ nav {
   border-bottom: 1px solid white;
   text-shadow: 10px 10px 30px white;
 }
-.description button {
+.description button,
+form .form-btn {
   background-color: bisque;
   width: fit-content;
   height: 125%;
@@ -82,12 +83,16 @@ nav {
   letter-spacing: 3px;
   padding: 0.5rem;
 }
-.description button:hover {
+.description button:hover,
+form .form-btn:hover {
   background-color: rgb(224, 0, 0);
   color: bisque;
+  cursor: pointer;
 }
-.description button:active {
+.description button:active,
+form .form-btn:active {
   background-color: rgb(109, 0, 0);
+  color: rgb(134, 98, 53);
 }
 .hero img {
   margin-right: 5rem;
