@@ -48,8 +48,15 @@ nav {
   height: 35rem;
   animation: appear 0.5s ease-in-out forwards;
 }
+.logo a:visited {
+  color: inherit;
+}
+.home-btn {
+  text-decoration: none;
+  padding: 0;
+}
 .description span,
-a:visited {
+.description span a:visited {
   color: rgb(224, 0, 0);
   text-decoration: none;
 }
@@ -66,17 +73,18 @@ a:visited {
 }
 .description button {
   background-color: bisque;
-  width: 25%;
-  height: 10%;
+  width: fit-content;
+  height: 125%;
   color: rgb(0, 0, 0);
   border-radius: 0.5rem;
   font-size: 1em;
   transition: all 0.3s ease-in-out;
   letter-spacing: 3px;
+  padding: 0.5rem;
 }
 .description button:hover {
   background-color: rgb(224, 0, 0);
-  color: white;
+  color: bisque;
 }
 .description button:active {
   background-color: rgb(109, 0, 0);

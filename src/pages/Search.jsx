@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Home.css';
+import '../styles/Search.css';
 import Logo from '../utils/lm.png';
 
-export default function Home() {
+
+export default function Search() {
   return (
     <>
       <header>
@@ -23,16 +24,14 @@ export default function Home() {
       <section className='hero'>
         <div className='description'>
           <h1>Lyrical<span>Master</span></h1>
-          <p>
-            Lyrical<span>Master</span> is a free service where you can find the lyrics for your favorite songs
-          </p>
-          <p>
-            Start searching and sing along your favorite songs <span>NOW</span>.
-          </p>
-          <Link to='/search'><button>Search Lyrics</button></Link>
+          <form>
+            <input type="text" name="song" id="song" placeholder='Search by artist or song name' />
+            <input className='form-btn' type="button" value="Search" />
+          </form>
         </div>
         <img src={Logo} alt="logo image" />
       </section>
+
     </>
   );
 }

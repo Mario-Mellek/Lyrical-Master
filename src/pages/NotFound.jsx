@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Home.css';
 import Logo from '../utils/lm.png';
 import { Link } from 'react-router-dom';
 import { MdOutlineWarningAmber } from 'react-icons/md';
@@ -11,7 +10,7 @@ export default function Home() {
       <header>
         <nav>
           <div className='logo'>
-            <h1>Lyrical <span>Master</span></h1>
+            <Link className='home-btn' to='/'><h1>Lyrical <span>Master</span></h1></Link>
           </div>
           <div className='nav-list'>
             <ul>
