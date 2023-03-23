@@ -34,7 +34,8 @@ export default function Search() {
       <header>
         <nav>
           <div className='logo'>
-            <Link className='home-btn' to='/'><h1>Lyrical <span>Master</span></h1></Link>
+            <Link className='home-btn' to='/'><h1>Lyrical
+              <span>Master</span></h1></Link>
           </div>
           <div className='nav-list'>
             <ul>
@@ -50,8 +51,17 @@ export default function Search() {
           <h1>Lyrical<span>Master</span></h1>
           <form>
             <div className='text-cont'>
-              <input onChange={e => handlechange(e)} value={searchText} type="text" name="song" id="song" placeholder='Search by artist or song name' />
-              <button onClick={e => handlemic(e)} className='mic' title='press to speak'><IoMdMicrophone className='mic-icon' /></button>
+              <input onChange={e => handlechange(e)}
+                value={searchText}
+                type="text"
+                name="song"
+                id="song"
+                placeholder='Search by artist or song name' />
+              <button onClick={e => handlemic(e)}
+                className='mic'
+                title='press to speak'>
+                <IoMdMicrophone className='mic-icon' />
+              </button>
             </div>
             <input className='form-btn' type="button" value="Search" />
           </form>
