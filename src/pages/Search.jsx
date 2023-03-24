@@ -1,34 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Search.css';
 import Logo from '../utils/lm.png';
 import { IoMdMicrophone } from 'react-icons/io';
 import 'regenerator-runtime/runtime';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Search() {
 
-  const { transcript,
-    // resetTranscript
-  } = useSpeechRecognition();
+  const { transcript } = useSpeechRecognition();
   const [searchText, setSearchText] = useState('');
-
-  const handlechange = (e) => {
-    setSearchText(e.target.value);
+  const navigate = useNavigate();
+  const toastSettings = {
+    position: 'bottom-right',
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: 'dark',
+    transition: Flip
   };
-
 
   useEffect(() => {
     setSearchText(transcript);
   }, [transcript]);
 
-  const handlemic = (e) => {
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const handleMic = (e) => {
     e.preventDefault();
     SpeechRecognition.startListening({
       continuous: false,
     });
   };
+
+  const handleValidation = () => {
+    if (searchText.length == 0)
+      return false;
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (handleValidation())
+      navigate('/results', { state: { searchText } });
+    else
+      toast.error('No input detected !', toastSettings);
+  };
+
   return (
     <>
       <header>
@@ -49,26 +74,26 @@ export default function Search() {
       <section className='hero'>
         <div className='description'>
           <h1>Lyrical<span>Master</span></h1>
-          <form>
+          <form onSubmit={e => handleSubmit(e)}>
             <div className='text-cont'>
-              <input onChange={e => handlechange(e)}
+              <input onChange={e => handleChange(e)}
                 value={searchText}
                 type="text"
                 name="song"
                 id="song"
                 placeholder='Search by artist or song name' />
-              <button onClick={e => handlemic(e)}
+              <button onClick={e => handleMic(e)}
                 className='mic'
                 title='press to speak'>
                 <IoMdMicrophone className='mic-icon' />
               </button>
             </div>
-            <input className='form-btn' type="button" value="Search" />
+            <input className='form-btn' type="submit" value="Search" />
           </form>
         </div>
         <img src={Logo} alt="logo image" />
+        <ToastContainer />
       </section>
-
     </>
   );
 }

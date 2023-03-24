@@ -9,7 +9,7 @@ export default function Home() {
       <header>
         <nav>
           <div className='logo'>
-            <Link className='home-btn' to='/'><h1>Lyrical <span>Master</span></h1></Link>
+            <Link className='home-btn' to='/'><h1>Lyrical<span>Master</span></h1></Link>
           </div>
           <div className='nav-list'>
             <ul>

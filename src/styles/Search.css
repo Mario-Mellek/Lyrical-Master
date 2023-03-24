@@ -42,3 +42,28 @@ form .mic {
 form .mic-icon {
   font-size: 40px;
 }
+
+/** Classes for the displayed toast **/
+.Toastify__toast {
+  color: bisque !important;
+  font-size: large;
+  background-color: rgb(70, 14, 14) !important;
+}
+
+.Toastify__toast-icon {
+  width: 50px !important;
+}
+
+.Toastify__progress-bar {
+  background-color: rgb(224, 0, 0) !important;
+}
+
+.Toastify__close-button > svg {
+  width: 30px !important;
+  height: 30px !important;
+}
+.Toastify__close-button:hover,
+.Toastify__close-button:focus {
+  background-color: rgb(224, 0, 0);
+  border-radius: 5px;
+}
