@@ -2,24 +2,14 @@ import React from 'react';
 import Logo from '../utils/lm.png';
 import { Link } from 'react-router-dom';
 import { MdOutlineWarningAmber } from 'react-icons/md';
+import NavBar from '../components/NavBar';
 
 
 export default function Home() {
   return (
     <>
       <header>
-        <nav>
-          <div className='logo'>
-            <Link className='home-btn' to='/'><h1>Lyrical<span>Master</span></h1></Link>
-          </div>
-          <div className='nav-list'>
-            <ul>
-              <li>Lorem</li>
-              <li>ipsum</li>
-              <li>dolor</li>
-            </ul>
-          </div>
-        </nav>
+        <NavBar />
       </header>
       <section className='hero'>
         <div className='description'>

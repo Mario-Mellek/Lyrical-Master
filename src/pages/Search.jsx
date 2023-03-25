@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Search.css';
 import Logo from '../utils/lm.png';
 import { IoMdMicrophone } from 'react-icons/io';
@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from '../components/NavBar';
 
 
 export default function Search() {
@@ -57,19 +58,7 @@ export default function Search() {
   return (
     <>
       <header>
-        <nav>
-          <div className='logo'>
-            <Link className='home-btn' to='/'><h1>Lyrical
-              <span>Master</span></h1></Link>
-          </div>
-          <div className='nav-list'>
-            <ul>
-              <li>Lorem</li>
-              <li>ipsum</li>
-              <li>dolor</li>
-            </ul>
-          </div>
-        </nav>
+        <NavBar />
       </header>
       <section className='hero'>
         <div className='description'>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 import '../styles/Home.css';
 import Logo from '../utils/lm.png';
 
@@ -7,18 +8,7 @@ export default function Home() {
   return (
     <>
       <header>
-        <nav>
-          <div className='logo'>
-            <Link className='home-btn' to='/'><h1>Lyrical<span>Master</span></h1></Link>
-          </div>
-          <div className='nav-list'>
-            <ul>
-              <li>Lorem</li>
-              <li>ipsum</li>
-              <li>dolor</li>
-            </ul>
-          </div>
-        </nav>
+        <NavBar />
       </header>
       <section className='hero'>
         <div className='description'>
