@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import axios from 'axios';
+import '../styles/Lyrics.css';
 
 export default function Lyrics() {
   const location = useLocation();
@@ -10,8 +11,8 @@ export default function Lyrics() {
   const [lyrics, setLyrics] = useState('');
   const [isLoading, setIsLoading] = useState();
   const { songID, songImage } = location.state || {};
-  const API_KEY = import.meta.env.VITE_API_KEY
-  const API_URL = import.meta.env.VITE_LYRICS_API
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const API_URL = import.meta.env.VITE_LYRICS_API;
 
 
   const toastSettings = {
@@ -68,15 +69,16 @@ export default function Lyrics() {
       throw new Error('Something went wrong\n' + error);
     }
   };
-
   return (
     <>
       <header>
         <NavBar loading={isLoading} />
       </header>
-      <section>
-        <div><img src={songImage} alt="song-image" /></div>
-        <div>
+      <section className='lyrics-con'>
+        <div className='song-image'>
+          <img src={songImage} alt="song-image" />
+        </div>
+        <div className='song-lyrics'>
           <p dangerouslySetInnerHTML={{ __html: lyrics }} />
         </div>
         <ToastContainer />

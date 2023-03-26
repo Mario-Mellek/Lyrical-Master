@@ -16,8 +16,8 @@ export default function Results() {
   const [isLoading, setIsLoading] = useState();
   const navigate = useNavigate();
   const { searchText } = location.state || {};
-  const API_KEY = import.meta.env.VITE_API_KEY
-  const API_URL = import.meta.env.VITE_SONG_API
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const API_URL = import.meta.env.VITE_SONG_API;
 
   useEffect(() => {
     if (!location.state || !location.state.searchText) {
