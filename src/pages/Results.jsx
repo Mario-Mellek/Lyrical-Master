@@ -52,7 +52,7 @@ export default function Results() {
       const response = await axios.request(options);
       setSearchResults((prev) => [...prev, ...response.data.hits]);
       setIsLoading(false);
-      if (response.data.hits.length === 0)
+      if (response.data.hits.length === 0 && searchResults.length === 0)
         toast.error('No results found', {
           ...toastSettings, onClose: () => {
             navigate('/search');
@@ -78,8 +78,8 @@ export default function Results() {
       setPage((prev) => prev + 1);
   }, [inView]);
 
-  const handleClick = (songID, songImage) => {
-    navigate('/lyrics', { state: { songID, songImage } });
+  const handleClick = (songID, songImage, songFullTitle) => {
+    navigate('/lyrics', { state: { songID, songImage, songFullTitle } });
   };
 
   return (
@@ -99,7 +99,10 @@ export default function Results() {
                   { backgroundImage: `url(${song.result.song_art_image_url})` }
                   :
                   { backgroundColor: 'black' }}
-                onClick={() => handleClick(song.result.id, song.result.song_art_image_url)}>
+                onClick={() => handleClick(
+                  song.result.id,
+                  song.result.song_art_image_url,
+                  song.result.full_title)}>
                 <p className='full-name'>{(song.result.full_title)}</p>
                 <div className='song-info'>
                   <p>Artist: {(song.result.artist_names)}</p>

@@ -4,13 +4,22 @@
 }
 .song-image img {
   width: 37rem;
+  border: 2px solid rgb(224, 0, 0);
+  padding: 0;
+  border-radius: 1rem;
+}
+.lyrics-wrapper {
+  margin: 0 1rem;
+  padding: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid rgb(224, 0, 0);
 }
 .song-lyrics {
   height: 85vh;
   background-color: black;
   color: white;
   overflow-y: scroll;
-  margin: 0 1rem;
   font-size: 1.5em;
   text-align: center;
   line-height: 50px;
@@ -27,4 +36,64 @@
   color: inherit;
   text-decoration: none;
   pointer-events: none;
+}
+.lyrics-con .songInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infoWrapper {
+  position: absolute;
+  left: 25%;
+  top: 15%;
+  padding: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid rgb(224, 0, 0);
+}
+.info-Container {
+  width: 50vw;
+  height: 70vh;
+  background-color: rgb(0, 0, 0);
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 50px;
+  word-spacing: 2px;
+  overflow-y: scroll;
+  color: white;
+}
+.info-Container::-webkit-scrollbar {
+  background-color: rgb(0, 0, 0);
+  width: 5px;
+}
+.info-Container::-webkit-scrollbar-thumb {
+  background-color: rgb(224, 0, 0);
+}
+.info-Container a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+}
+.songInfo button {
+  background-color: bisque;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+}
+.songInfo button:hover {
+  background-color: rgb(224, 0, 0);
+  color: bisque;
+  cursor: pointer;
+}
+.songInfo button:active,
+form .form-btn:active {
+  background-color: rgb(109, 0, 0);
+  color: rgb(134, 98, 53);
 }

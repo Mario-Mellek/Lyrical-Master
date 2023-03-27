@@ -4,16 +4,20 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import axios from 'axios';
 import '../styles/Lyrics.css';
+import YouTube from '../components/YouTube';
 
 export default function Lyrics() {
   const location = useLocation();
   const navigate = useNavigate();
   const [lyrics, setLyrics] = useState('');
   const [isLoading, setIsLoading] = useState();
-  const { songID, songImage } = location.state || {};
+  const [showInfo, setShowInfo] = useState(false);
+  const [info, setInfo] = useState('');
+  const { songID, songImage, songFullTitle } = location.state || {};
   const API_KEY = import.meta.env.VITE_API_KEY;
   const API_URL = import.meta.env.VITE_LYRICS_API;
-
+  const API_URL_INFO = import.meta.env.VITE_INFO_API;
+  const [description, setDescription] = useState('');
 
   const toastSettings = {
     position: 'bottom-right',
@@ -26,7 +30,7 @@ export default function Lyrics() {
     transition: Flip,
   };
 
-  const options = {
+  const songLyrics = {
     method: 'GET',
     url: `${API_URL}`,
     params: { id: `${songID}` },
@@ -36,6 +40,20 @@ export default function Lyrics() {
     }
   };
 
+  const songInfo = {
+    method: 'GET',
+    url: `${API_URL_INFO}`,
+    params: { id: `${songID}` },
+    headers: {
+      'X-RapidAPI-Key': `${API_KEY}`,
+      'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
+    }
+  };
+
+  const toggleInfo = () => {
+    setShowInfo((prev) => !prev);
+  };
+
   useEffect(() => {
     if (!location.state || !location.state.songID) {
       navigate('/search');
@@ -43,14 +61,16 @@ export default function Lyrics() {
   }, [location]);
 
   useEffect(() => {
-    if (songID)
+    if (songID) {
       lyricsRequest();
+      infoRequest();
+    }
   }, [songID]);
 
   const lyricsRequest = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.request(options);
+      const response = await axios.request(songLyrics);
       setLyrics(response.data.lyrics.lyrics.body.html);
       setIsLoading(false);
       if (!response.data.lyrics.lyrics.body.html) {
@@ -69,17 +89,43 @@ export default function Lyrics() {
       throw new Error('Something went wrong\n' + error);
     }
   };
+  const infoRequest = async () => {
+    try {
+      const response = await axios.request(songInfo);
+      setInfo(response.data.song);
+      response.data.song.description.html === '<p>?</p>' ?
+        setDescription('<h1>No Description found</h1>')
+        :
+        setDescription(response.data.song.description.html);
+    } catch (error) {
+      throw new Error('Something went wrong\n' + error);
+    }
+  };
+
   return (
     <>
       <header>
         <NavBar loading={isLoading} />
       </header>
       <section className='lyrics-con'>
+        <div className={`infoWrapper ${showInfo ? null : 'hidden'}`}>
+          <div className={`info-Container ${showInfo ? null : 'hidden'}`}>
+            <h1>{songFullTitle}</h1>
+            <p dangerouslySetInnerHTML={{ __html: description }} />
+          </div>
+        </div>
         <div className='song-image'>
+          <div className='songInfo'>
+            <h2>{songFullTitle}</h2>
+            <YouTube videoURL={info.youtube_url} />
+            {description && <button onClick={toggleInfo}>More about {songFullTitle}</button>}
+          </div>
           <img src={songImage} alt="song-image" />
         </div>
-        <div className='song-lyrics'>
-          <p dangerouslySetInnerHTML={{ __html: lyrics }} />
+        <div className='lyrics-wrapper'>
+          <div className='song-lyrics'>
+            <p dangerouslySetInnerHTML={{ __html: lyrics }} />
+          </div>
         </div>
         <ToastContainer />
       </section>
