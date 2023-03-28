@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import axios from 'axios';
 import '../styles/Lyrics.css';
+import { FaWindowClose } from 'react-icons/fa';
 import YouTube from '../components/YouTube';
 
 export default function Lyrics() {
@@ -110,6 +111,7 @@ export default function Lyrics() {
       <section className='lyrics-con'>
         <div className={`infoWrapper ${showInfo ? null : 'hidden'}`}>
           <div className={`info-Container ${showInfo ? null : 'hidden'}`}>
+            <FaWindowClose className='close' />
             <h1>{songFullTitle}</h1>
             <p dangerouslySetInnerHTML={{ __html: description }} />
           </div>
