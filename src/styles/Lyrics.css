@@ -126,6 +126,9 @@ form .form-btn:active {
 .info-Container .close:hover {
   animation: rotate 0.5s forwards ease-in-out;
 }
+.info-Container .close:active {
+  color: rgb(109, 0, 0);
+}
 @keyframes rotate {
   to {
     transform: rotate(180deg);

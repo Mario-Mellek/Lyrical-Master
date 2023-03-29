@@ -52,12 +52,14 @@ export default function Results() {
       const response = await axios.request(options);
       setSearchResults((prev) => [...prev, ...response.data.hits]);
       setIsLoading(false);
-      if (response.data.hits.length === 0 && searchResults.length === 0)
+      if (!response.data.hits.length && !searchResults.length) {
         toast.error('No results found', {
           ...toastSettings, onClose: () => {
             navigate('/search');
           }
         });
+      } else if (!response.data.hits.length && searchResults.length)
+        toast.error('End of search results', toastSettings);
     } catch (error) {
       toast.error('something went wrong', {
         ...toastSettings, onClose: () => {
