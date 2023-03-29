@@ -22,7 +22,7 @@ export default function Lyrics() {
 
   const toastSettings = {
     position: 'bottom-right',
-    autoClose: 3000,
+    autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -53,6 +53,13 @@ export default function Lyrics() {
 
   const toggleInfo = () => {
     setShowInfo((prev) => !prev);
+    if (!showInfo && description === '<h1>No Description found</h1>') {
+      toast.error('No Description found', {
+        ...toastSettings, onClose: () => {
+          setShowInfo(false);
+        }
+      });
+    }
   };
 
   useEffect(() => {
@@ -111,7 +118,7 @@ export default function Lyrics() {
       <section className='lyrics-con'>
         <div className={`infoWrapper ${showInfo ? null : 'hidden'}`}>
           <div className={`info-Container ${showInfo ? null : 'hidden'}`}>
-            <FaWindowClose className='close' />
+            <FaWindowClose className='close' onClick={() => setShowInfo(false)} />
             <h1>{songFullTitle}</h1>
             <p dangerouslySetInnerHTML={{ __html: description }} />
           </div>

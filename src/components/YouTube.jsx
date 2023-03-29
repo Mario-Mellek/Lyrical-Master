@@ -49,6 +49,8 @@ export default function YouTube({ videoURL }) {
   }, [songID]);
 
   return (
-    video && <div className='video' dangerouslySetInnerHTML={{ __html: video }} />
+    <>
+      {video ? <div className='video' dangerouslySetInnerHTML={{ __html: video }} /> : <h2>Loading</h2>}
+    </>
   );
 }

@@ -17,7 +17,7 @@ export default function Search() {
   const navigate = useNavigate();
   const toastSettings = {
     position: 'bottom-right',
-    autoClose: 3000,
+    autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

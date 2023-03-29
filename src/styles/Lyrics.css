@@ -60,6 +60,7 @@
   border-radius: 1rem;
   overflow: hidden;
   border: 2px solid rgb(224, 0, 0);
+  animation: fadein 0.5s both ease-in-out;
 }
 .info-Container {
   width: 50vw;
@@ -118,12 +119,23 @@ form .form-btn:active {
   border-radius: 0.5rem;
   transition: all 0.2s ease-in;
 }
-
+.info-Container h1 {
+  text-align: center;
+  border-bottom: 1px solid rgb(224, 0, 0);
+}
 .info-Container .close:hover {
   animation: rotate 0.5s forwards ease-in-out;
 }
 @keyframes rotate {
   to {
     transform: rotate(180deg);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
   }
 }

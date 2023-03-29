@@ -27,7 +27,6 @@ export default function NavBar({ loading }) {
         loading={isLoading}
         cssOverride={
           {
-            // display: 'block',
             margin: '0 auto',
             width: '90vw',
             background: 'transparent',
