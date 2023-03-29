@@ -53,7 +53,7 @@ export default function Lyrics() {
 
   const toggleInfo = () => {
     setShowInfo((prev) => !prev);
-    if (!showInfo && description === '<h1>No Description found</h1>') {
+    if (!showInfo && description === '<h2>No Description found</h2>') {
       toast.error('No Description found', {
         ...toastSettings, onClose: () => {
           setShowInfo(false);
@@ -102,7 +102,7 @@ export default function Lyrics() {
       const response = await axios.request(songInfo);
       setInfo(response.data.song);
       response.data.song.description.html === '<p>?</p>' ?
-        setDescription('<h1>No Description found</h1>')
+        setDescription('<h2>No Description found</h2>')
         :
         setDescription(response.data.song.description.html);
     } catch (error) {
