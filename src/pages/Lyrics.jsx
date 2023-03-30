@@ -89,8 +89,8 @@ export default function Lyrics() {
         });
       }
     } catch (error) {
-      toast.error('something went wrong', {
-        ...toastSettings, onClose: () => {
+      toast.error(error.response.data.message.split(', ')[0], {
+        ...toastSettings, autoClose: 5000, onClose: () => {
           navigate('/search');
         }
       });
