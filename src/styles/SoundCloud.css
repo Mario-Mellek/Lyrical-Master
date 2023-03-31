@@ -1,0 +1,16 @@
+.SoundCloud-container {
+  padding: 0;
+}
+
+.soundClound-icon {
+  font-size: 2rem;
+}
+
+.SoundCloud-container a {
+  padding: 0;
+}
+
+.SoundCloud-container button {
+  padding: 0;
+  margin-left: 0.5rem;
+}

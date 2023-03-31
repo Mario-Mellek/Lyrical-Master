@@ -129,6 +129,11 @@ form .form-btn:active {
 .info-Container .close:active {
   color: rgb(109, 0, 0);
 }
+.media-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
 @keyframes rotate {
   to {
     transform: rotate(180deg);

@@ -6,6 +6,7 @@ import axios from 'axios';
 import '../styles/Lyrics.css';
 import { FaWindowClose } from 'react-icons/fa';
 import YouTube from '../components/YouTube';
+import SoundCloud from '../components/SoundCloud';
 
 export default function Lyrics() {
   const location = useLocation();
@@ -127,7 +128,9 @@ export default function Lyrics() {
           <div className='songInfo'>
             <h2>{songFullTitle}</h2>
             <YouTube videoURL={info.youtube_url} />
-            {description && <button onClick={toggleInfo}>More about {songFullTitle}</button>}
+            <div className='media-wrapper'>
+              <SoundCloud soundURL={info.soundcloud_url} />
+              {description && <button onClick={toggleInfo}>More about {songFullTitle}</button>}</div>
           </div>
           <img src={songImage} alt="song-image" />
         </div>
