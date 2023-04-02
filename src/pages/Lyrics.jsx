@@ -132,7 +132,10 @@ export default function Lyrics() {
               <SoundCloud soundURL={info.soundcloud_url} />
               {description && <button onClick={toggleInfo}>More about {songFullTitle}</button>}</div>
           </div>
-          <img src={songImage} alt="song-image" />
+          <div className='img-container'>
+            {info.release_date_for_display && <span className='released'>Released {info.release_date_for_display}</span>}
+            <img src={songImage} alt="song-image" />
+          </div>
         </div>
         <div className='lyrics-wrapper'>
           <div className='song-lyrics'>

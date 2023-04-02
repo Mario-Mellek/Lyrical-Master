@@ -134,6 +134,24 @@ form .form-btn:active {
   flex-direction: row-reverse;
   align-items: center;
 }
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.released {
+  position: absolute;
+  top: 0.5rem;
+  background-color: rgba(250, 235, 215, 0.5);
+  width: fit-content;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.released:hover {
+  background-color: rgb(250, 235, 215);
+}
 @keyframes rotate {
   to {
     transform: rotate(180deg);
