@@ -61,6 +61,7 @@
   overflow: hidden;
   border: 2px solid rgb(224, 0, 0);
   animation: fadein 0.5s both ease-in-out;
+  z-index: 1;
 }
 .info-Container {
   width: 50vw;
