@@ -50,14 +50,9 @@
   flex-direction: row;
   position: sticky;
   top: 10%;
-  left: 83%;
-  overflow: hidden;
-  padding: 1rem;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(224, 0, 0, 0.8) 100%
-  );
+  right: 100%;
+  padding: 0.75rem 0.25rem 0.75rem 0.75rem;
+  background: linear-gradient(180deg, black 40%, rgba(224, 0, 0, 0.7) 110%);
   border-radius: 0.5rem;
   cursor: grabbing;
   opacity: 0.5;
@@ -69,11 +64,11 @@
 .floating-search input {
   height: 40px;
   border: 0px;
-  width: fit-content;
   font-size: large;
-  color: rgba(224, 0, 0, 0.9);
+  color: rgba(224, 0, 0, 0.8);
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
+  background-color: bisque;
 }
 .floating-search input:focus {
   outline: none;
@@ -81,20 +76,33 @@
 .floating-search button {
   width: fit-content;
   height: 40px;
-  background-color: white;
+  background-color: bisque;
   border: 0px;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
+  transition: all 0.2s ease-in;
 }
 .floating-search button:focus {
   outline: none;
 }
-.floating-search button:hover {
-  cursor: pointer;
-}
 .searchIcon {
-  height: 25px;
-  width: 30px;
+  height: 1.6rem;
+  width: 1.9rem;
   padding: 0;
   color: rgba(224, 0, 0, 0.8);
+  transition: all 0.2s ease-in;
+}
+.floating-search button:hover {
+  cursor: pointer;
+  background-color: transparent;
+}
+.floating-search button:hover .searchIcon {
+  color: bisque;
+}
+form .dragIndicator {
+  height: 2rem;
+  width: 2rem;
+  color: bisque;
+  margin-left: 0.25rem;
+  padding: 0;
 }

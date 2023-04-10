@@ -7,6 +7,7 @@ import '../styles/Results.css';
 import { useInView } from 'react-intersection-observer';
 import NavBar from '../components/NavBar';
 import { BiSearchAlt2 } from 'react-icons/bi';
+import { MdOutlineDragIndicator } from 'react-icons/md';
 import Draggable from 'react-draggable';
 
 
@@ -113,12 +114,13 @@ export default function Results() {
       <section className='search-con'>
         <h1>Results for {searchText}</h1>
         <Draggable>
-          <form className='floating-search' title='Hold and Drag'>
+          <form className='floating-search'>
             <input
               onChange={e => handleSearchChange(e)}
               value={newSearchText}
               type="text" />
-            <button onClick={e => newSearchSubmit(e)}><BiSearchAlt2 className='searchIcon' /></button>
+            <button title='Search' onClick={e => newSearchSubmit(e)}><BiSearchAlt2 className='searchIcon' /></button>
+            <MdOutlineDragIndicator className='dragIndicator' title='Hold and Drag' />
           </form>
         </Draggable>
         <div className='results'>
