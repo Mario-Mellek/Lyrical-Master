@@ -113,7 +113,7 @@ export default function Results() {
       <section className='search-con'>
         <h1>Results for {searchText}</h1>
         <Draggable>
-          <form className='floating-search'>
+          <form className='floating-search' title='Hold and Drag'>
             <input
               onChange={e => handleSearchChange(e)}
               value={newSearchText}
