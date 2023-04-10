@@ -6,6 +6,8 @@ import { ToastContainer, toast, Flip } from 'react-toastify';
 import '../styles/Results.css';
 import { useInView } from 'react-intersection-observer';
 import NavBar from '../components/NavBar';
+import { BiSearchAlt2 } from 'react-icons/bi';
+import Draggable from 'react-draggable';
 
 
 export default function Results() {
@@ -15,14 +17,16 @@ export default function Results() {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState();
   const navigate = useNavigate();
-  const { searchText } = location.state || {};
+  const [searchText, setSearchText] = useState('');
+  const [newSearchText, setNewSearchText] = useState('');
   const API_KEY = import.meta.env.VITE_API_KEY;
   const API_URL = import.meta.env.VITE_SONG_API;
 
   useEffect(() => {
     if (!location.state || !location.state.searchText) {
       navigate('/search');
-    }
+    } else
+      setSearchText(location.state.searchText);
   }, [location]);
 
 
@@ -71,8 +75,10 @@ export default function Results() {
   };
 
   useEffect(() => {
-    if (searchText)
+    if (searchText) {
+      setNewSearchText(searchText);
       songRequest();
+    }
   }, [searchText, page]);
 
   useEffect(() => {
@@ -84,6 +90,21 @@ export default function Results() {
     navigate('/lyrics', { state: { songID, songImage, songFullTitle } });
   };
 
+  const handleSearchChange = (e) => {
+    setNewSearchText(e.target.value);
+  };
+
+  const newSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchText !== newSearchText) {
+      setSearchResults('');
+      setSearchText(newSearchText);
+    }
+    else {
+      toast.warn(`Already viewing ${searchText}`, toastSettings);
+    }
+  };
+
   return (
     <>
       <header>
@@ -91,6 +112,15 @@ export default function Results() {
       </header>
       <section className='search-con'>
         <h1>Results for {searchText}</h1>
+        <Draggable>
+          <form className='floating-search'>
+            <input
+              onChange={e => handleSearchChange(e)}
+              value={newSearchText}
+              type="text" />
+            <button onClick={e => newSearchSubmit(e)}><BiSearchAlt2 className='searchIcon' /></button>
+          </form>
+        </Draggable>
         <div className='results'>
           {searchResults.length > 0 && Object.values(searchResults).map((song, index) => {
             return (

@@ -46,3 +46,42 @@
 .cards:hover .song-info {
   background-color: rgb(250, 235, 215);
 }
+.search-con h1 {
+  margin-bottom: 2rem;
+}
+.floating-search {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 10%;
+  left: 90%;
+  overflow: hidden;
+  padding: 1rem;
+  background-color: aqua;
+  border-radius: 1rem;
+  cursor: grabbing;
+}
+.floating-search input {
+  height: 40px;
+  border: 0px;
+}
+.floating-search input:focus {
+  outline: none;
+}
+.floating-search button {
+  width: fit-content;
+  height: 40px;
+  background-color: white;
+  border: 0px;
+}
+.floating-search button:focus {
+  outline: none;
+}
+.floating-search button:hover {
+  cursor: pointer;
+}
+.searchIcon {
+  height: 25px;
+  width: 30px;
+  padding: 0;
+}
