@@ -25,12 +25,19 @@ nav {
 }
 .nav-list li {
   display: inline-block;
-  padding: 14px 16px;
+  padding: 0.86rem 1rem;
   font-size: large;
 }
 .nav-list a {
   color: inherit;
   text-decoration: none;
+  padding: 0.8rem;
+  border: 1px solid transparent;
+}
+.nav-list a:active {
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(224, 0, 0);
 }
 .hero {
   display: flex;
