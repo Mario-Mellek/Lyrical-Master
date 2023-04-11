@@ -16,9 +16,9 @@ export default function NavBar({ loading }) {
         </div>
         <div className='nav-list'>
           <ul>
-            <li>lorem</li>
-            <li>ipsum</li>
-            <li>dolor</li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/search'>Search</Link></li>
+            <li><Link to='/credits'>About Me</Link></li>
           </ul>
         </div>
       </nav>

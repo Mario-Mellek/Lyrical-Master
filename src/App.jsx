@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound';
 import Search from './pages/Search';
 import Results from './pages/Results';
 import Lyrics from './pages/Lyrics';
+import AboutMe from './pages/AboutMe';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/search' element={<Search />}></Route>
         <Route path='/results' element={<Results />}></Route>
         <Route path='/lyrics' element={<Lyrics />}></Route>
+        <Route path='/credits' element={<AboutMe />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
