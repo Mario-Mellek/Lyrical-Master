@@ -55,6 +55,7 @@ export default function Results() {
       setIsLoading(true);
       const response = await axios.request(options);
       setSearchResults((prev) => [...prev, ...response.data.hits]);
+      console.log(response);
       setIsLoading(false);
       if (!response.data.hits.length && !searchResults.length) {
         toast.error('No results found', {
