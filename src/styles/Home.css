@@ -111,7 +111,7 @@ form .form-btn:active {
   margin-right: 5rem;
   width: 50rem;
   height: 40rem;
-  animation: fadein 0.5s forwards ease-in-out;
+  animation: slideIn 0.5s ease-in-out;
 }
 .warning-icon {
   font-size: 200px;
@@ -126,7 +126,7 @@ form .form-btn:active {
   }
 }
 
-@keyframes fadein {
+@keyframes slideIn {
   from {
     opacity: 0;
     transform: translateX(-300px);
