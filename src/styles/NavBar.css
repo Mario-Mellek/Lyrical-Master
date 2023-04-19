@@ -1,0 +1,30 @@
+.nav-toggle {
+  display: none;
+  background-color: rgb(224, 0, 0);
+  color: white;
+  width: 80px;
+  height: 40px;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 600px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-list {
+    display: none;
+  }
+}
+
+.expand {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  right: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(224, 0, 0, 0.25);
+  height: 200px;
+  width: 250px;
+  border-radius: 1rem;
+}
