@@ -18,12 +18,13 @@ export default function AboutMe() {
             Skilled in HTML, CSS, JavaScript, Git, React.js, Bootstrap, Tailwindcss, PostgreSQL, MongoDB, node.js, express.js and AWS.
             <br /><br />
             Taught full-stack web development to aspiring coders for a short period of time.
-          </p>
-          <p>
-            Currently studying software engineering at ALX to further enhance my programming skills.
+            <br /><br />
+            <p>
+              Currently studying software engineering at ALX to further enhance my programming skills.
+            </p>
           </p>
         </div>
-        <img src={myImg} alt="logo image" />
+        <img className='myImg' src={myImg} alt="My Image" />
       </section>
     </>
   );
