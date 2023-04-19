@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 
@@ -16,9 +16,9 @@ export default function NavBar({ loading }) {
         </div>
         <div className='nav-list'>
           <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/search'>Search</Link></li>
-            <li><Link to='/credits'>About Me</Link></li>
+            <li><NavLink activeClassName="active" to='/'>Home</NavLink></li>
+            <li><NavLink activeClassName="active" to='/search'>Search</NavLink></li>
+            <li><NavLink activeClassName="active" to='/credits'>About Me</NavLink></li>
           </ul>
         </div>
       </nav>

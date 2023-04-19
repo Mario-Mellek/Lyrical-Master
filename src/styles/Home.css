@@ -12,6 +12,10 @@ nav {
   height: fit-content;
   border-radius: 0.5rem;
 }
+li .active {
+  background-color: rgb(224, 0, 0);
+  border-radius: 0.5rem;
+}
 .logo span {
   color: rgb(224, 0, 0);
 }
