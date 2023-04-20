@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 import PropTypes from 'prop-types';
 import '../styles/NavBar.css';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function NavBar({ loading }) {
   const [viewNav, setViewNav] = useState(false);
@@ -27,7 +28,7 @@ export default function NavBar({ loading }) {
             <li><NavLink activeclassname="active" to='/credits'>About Me</NavLink></li>
           </ul>
         </div>
-        <button onClick={toggle} className='nav-toggle'>Menu</button>
+        <button onClick={toggle} className='nav-toggle'><GiHamburgerMenu className='menu-burger' /></button>
       </nav>
       <BarLoader
         color={'rgb(224, 0, 0)'}
