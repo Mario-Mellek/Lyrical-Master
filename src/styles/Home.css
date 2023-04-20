@@ -150,3 +150,33 @@ form .form-btn:active {
       0 0 10px rgb(224, 0, 0);
   }
 }
+
+@media screen and (max-width: 600px) {
+  nav {
+    width: 100vw;
+  }
+  .expand ul {
+    margin-right: 0;
+  }
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .hero img {
+    width: 200px;
+    height: 200px;
+    margin: 0;
+  }
+  div.description {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+  }
+}
