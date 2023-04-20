@@ -22,18 +22,20 @@
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  top: 80px;
-  right: 2%;
+  top: 100%;
+  right: 0;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgba(224, 0, 0, 0.25);
-  height: 100%;
-  width: 90%;
+  background-color: rgba(128, 128, 128, 0.3);
+  border: 1px solid rgba(224, 0, 0, 0.3);
+  height: fit-content;
+  width: 50%;
   border-radius: 1rem;
 }
 .menu-burger {
   width: 30px;
   height: 30px;
   padding: 0;
+  color: rgba(255, 255, 255, 0.9);
 }

@@ -153,6 +153,8 @@ form .form-btn:active {
 
 @media screen and (max-width: 600px) {
   nav {
+    margin-top: -2vh;
+    margin-bottom: -0.5vh;
     width: 100vw;
   }
   .expand ul {
@@ -160,16 +162,17 @@ form .form-btn:active {
   }
   .hero {
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
     margin: 0;
+    padding-bottom: 5vh;
   }
   .hero img {
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     margin: 0;
   }
   div.description {

@@ -8,3 +8,11 @@
 .description {
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .hero .myImg {
+    margin-top: 5vh;
+    width: 80%;
+    height: 80%;
+  }
+}
