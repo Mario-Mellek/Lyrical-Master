@@ -118,12 +118,13 @@ form .dragIndicator {
   .search-con .results {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8rem 0.5rem;
+    gap: 0.5rem;
   }
   .results .cards {
     width: 100%;
     height: 25vh;
     border-radius: 0.5rem;
+    margin-bottom: 100%;
   }
   .search-con h1 {
     margin-bottom: 0;
