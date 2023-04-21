@@ -167,3 +167,5 @@ form .form-btn:active {
     opacity: 0.9;
   }
 }
+@media screen and (max-width: 600px) {
+}
