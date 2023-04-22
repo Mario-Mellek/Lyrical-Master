@@ -185,6 +185,9 @@ form .form-btn:active {
   .media-wrapper {
     width: 95%;
   }
+  .media-wrapper .about {
+    padding: 5% 0;
+  }
   .lyrics-con {
     display: flex;
     align-items: center;

@@ -130,7 +130,7 @@ export default function Lyrics() {
             <YouTube videoURL={info.youtube_url} />
             <div className='media-wrapper'>
               <SoundCloud soundURL={info.soundcloud_url} />
-              {description && <button onClick={toggleInfo}>More about {songFullTitle}</button>}</div>
+              {description && <button className='about' onClick={toggleInfo}>More about {songFullTitle}</button>}</div>
           </div>
           <div className='img-container'>
             {info.release_date_for_display && <span className='released'>Released {info.release_date_for_display}</span>}
