@@ -58,6 +58,7 @@
   cursor: grabbing;
   opacity: 0.5;
   transition: opacity 0.2s ease-in;
+  z-index: 1;
 }
 .floating-search:hover {
   opacity: 1;
