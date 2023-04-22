@@ -5,8 +5,12 @@ import { ToastContainer, toast, Flip } from 'react-toastify';
 import axios from 'axios';
 import '../styles/Lyrics.css';
 import { FaWindowClose } from 'react-icons/fa';
+import { HiOutlineArrowsExpand } from 'react-icons/hi';
+import { HiOutlineArrowsPointingIn } from 'react-icons/hi2';
 import YouTube from '../components/YouTube';
 import SoundCloud from '../components/SoundCloud';
+/* global window */
+
 
 export default function Lyrics() {
   const location = useLocation();
@@ -15,6 +19,8 @@ export default function Lyrics() {
   const [isLoading, setIsLoading] = useState();
   const [showInfo, setShowInfo] = useState(false);
   const [info, setInfo] = useState('');
+  //state to expand the lyrics on smaller screens
+  const [expand, setExpand] = useState(false);
   const { songID, songImage, songFullTitle } = location.state || {};
   const API_KEY = import.meta.env.VITE_API_KEY;
   const API_URL = import.meta.env.VITE_LYRICS_API;
@@ -137,8 +143,19 @@ export default function Lyrics() {
             <img src={songImage} alt="song-image" />
           </div>
         </div>
-        <div className='lyrics-wrapper'>
+        <div
+          onClick={() => setExpand((prev) => !prev)}
+          className={`lyrics-wrapper ${expand ? 'wideView' : ''}`}>
           <div className='song-lyrics'>
+            {window.innerWidth < 760 && expand ? (
+              <dev>
+                <HiOutlineArrowsPointingIn className='expand-icon' />
+              </dev>
+            ) : window.innerWidth < 760 ? (
+              <dev>
+                <HiOutlineArrowsExpand className='expand-icon' />
+              </dev>
+            ) : null}
             <p dangerouslySetInnerHTML={{ __html: lyrics }} />
           </div>
         </div>

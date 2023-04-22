@@ -169,6 +169,11 @@ form .form-btn:active {
     opacity: 0.9;
   }
 }
+.expand-icon {
+  display: none;
+  color: white;
+  padding: 0;
+}
 @media screen and (max-width: 760px) {
   .song-image img {
     width: 95%;
@@ -178,6 +183,9 @@ form .form-btn:active {
   .lyrics-wrapper {
     margin: 0 -20px -10px -10px;
     width: 350%;
+  }
+  .wideView {
+    animation: expand both ease-in;
   }
   .song-lyrics {
     padding-left: 10%;
@@ -192,5 +200,14 @@ form .form-btn:active {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .expand-icon {
+    display: inline;
+  }
+  @keyframes expand {
+    to {
+      position: absolute;
+      width: 100%;
+    }
   }
 }
