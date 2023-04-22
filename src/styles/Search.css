@@ -81,4 +81,7 @@ form .mic-icon {
   .text-cont {
     margin-bottom: 2.5vh;
   }
+  form {
+    margin-top: 7.5vh;
+  }
 }

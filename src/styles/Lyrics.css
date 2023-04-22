@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .song-image img {
@@ -40,6 +41,7 @@
 }
 .song-lyrics::-webkit-scrollbar-thumb {
   background-color: rgb(224, 0, 0);
+  border-radius: 1rem;
 }
 .song-lyrics a {
   color: inherit;
@@ -168,4 +170,24 @@ form .form-btn:active {
   }
 }
 @media screen and (max-width: 600px) {
+  .song-image img {
+    width: 95%;
+    height: 95%;
+    border: none;
+  }
+  .lyrics-wrapper {
+    margin: 0 -20px -10px -10px;
+    width: 350%;
+  }
+  .song-lyrics {
+    padding-left: 10%;
+  }
+  .media-wrapper {
+    width: 95%;
+  }
+  .lyrics-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

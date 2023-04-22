@@ -3,3 +3,10 @@
   max-height: 45vh;
   border-radius: 1rem;
 }
+
+@media screen and (max-width: 600px) {
+  iframe {
+    width: 100%;
+    margin-left: 2%;
+  }
+}
