@@ -207,7 +207,7 @@ form .form-btn:active {
   @keyframes expand {
     to {
       position: absolute;
-      width: 100%;
+      width: 95%;
     }
   }
 }
