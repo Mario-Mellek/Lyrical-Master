@@ -5,7 +5,7 @@ import { ToastContainer, toast, Flip } from 'react-toastify';
 import axios from 'axios';
 import '../styles/Lyrics.css';
 import { FaWindowClose } from 'react-icons/fa';
-import { HiOutlineArrowsExpand } from 'react-icons/hi';
+import { HiOutlineArrowsPointingOut } from 'react-icons/hi2';
 import { HiOutlineArrowsPointingIn } from 'react-icons/hi2';
 import YouTube from '../components/YouTube';
 import SoundCloud from '../components/SoundCloud';
@@ -148,13 +148,9 @@ export default function Lyrics() {
           className={`lyrics-wrapper ${expand ? 'wideView' : ''}`}>
           <div className='song-lyrics'>
             {window.innerWidth < 760 && expand ? (
-              <dev>
-                <HiOutlineArrowsPointingIn className='expand-icon' />
-              </dev>
+              <HiOutlineArrowsPointingIn className='expand-icon' />
             ) : window.innerWidth < 760 ? (
-              <dev>
-                <HiOutlineArrowsExpand className='expand-icon' />
-              </dev>
+              <HiOutlineArrowsPointingOut className='expand-icon' />
             ) : null}
             <p dangerouslySetInnerHTML={{ __html: lyrics }} />
           </div>

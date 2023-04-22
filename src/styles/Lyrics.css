@@ -170,9 +170,13 @@ form .form-btn:active {
   }
 }
 .expand-icon {
+  position: sticky;
+  top: -1%;
   display: none;
-  color: white;
   padding: 0;
+  color: rgb(224, 0, 0);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 760px) {
   .song-image img {
