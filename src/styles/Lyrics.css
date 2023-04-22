@@ -169,7 +169,7 @@ form .form-btn:active {
     opacity: 0.9;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
   .song-image img {
     width: 95%;
     height: 95%;

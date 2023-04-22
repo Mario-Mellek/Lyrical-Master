@@ -4,7 +4,7 @@
   border-radius: 1rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
   iframe {
     width: 100%;
     margin-left: 2%;

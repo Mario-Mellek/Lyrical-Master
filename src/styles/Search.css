@@ -71,7 +71,7 @@ form .mic-icon {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
   form #song {
     width: 60vw;
   }
