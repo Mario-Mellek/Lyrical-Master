@@ -14,11 +14,12 @@ form #song {
   font-size: large;
   font-weight: 600;
   letter-spacing: 0.5px;
-  font-family: cursive, sans-serif;
 }
 
 form .form-btn {
   height: 25%;
+  font-family: 'Questrial', sans-serif;
+  font-weight: 600;
 }
 
 .text-cont {
@@ -74,6 +75,7 @@ form .mic-icon {
 @media screen and (max-width: 760px) {
   form #song {
     width: 60vw;
+    font-size: small;
   }
   form .mic-icon {
     padding: 15%;

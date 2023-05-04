@@ -3,11 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: bisque;
-}
 @media screen and (max-width: 760px) {
   * {
     padding-left: 0;
   }
+}
+body {
+  background-color: bisque;
+  font-family: 'Questrial', sans-serif;
+}
+button {
+  font-family: 'Questrial', sans-serif;
+  font-weight: 600;
 }

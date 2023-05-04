@@ -12,6 +12,7 @@ nav {
   color: white;
   height: fit-content;
   border-radius: 0.5rem;
+  font-family: 'Bruno Ace SC', cursive;
 }
 li .active {
   background-color: rgb(224, 0, 0);
@@ -25,13 +26,14 @@ li .active {
   font-size: x-large;
 }
 .nav-list ul {
+  width: 100%;
   list-style-type: none;
   margin-right: 3rem;
 }
 .nav-list li {
   display: inline-block;
   padding: 0.86rem 1rem;
-  font-size: large;
+  font-size: medium;
 }
 .nav-list a {
   color: inherit;
@@ -52,6 +54,7 @@ li .active {
   border-radius: 1rem;
   margin: 0 0.4rem;
   height: 87vh;
+  overflow: hidden;
 }
 .description {
   display: flex;
@@ -88,6 +91,7 @@ li .active {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid white;
   text-shadow: 10px 10px 30px white;
+  font-family: 'Bruno Ace SC', cursive;
 }
 .description button,
 form .form-btn {
@@ -121,7 +125,6 @@ form .form-btn:active {
 .warning-icon {
   font-size: 200px;
 }
-
 @keyframes appear {
   from {
     opacity: 0;
@@ -130,7 +133,6 @@ form .form-btn:active {
     opacity: 1;
   }
 }
-
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -140,7 +142,6 @@ form .form-btn:active {
     opacity: 1;
   }
 }
-
 @keyframes glow-red {
   from {
     text-shadow: 10px 10px 25px rgb(224, 0, 0);
@@ -151,12 +152,14 @@ form .form-btn:active {
       0 0 10px rgb(224, 0, 0);
   }
 }
-
 @media screen and (max-width: 760px) {
   nav {
     margin-top: -2vh;
     margin-bottom: -0.5vh;
     width: 100vw;
+  }
+  .logo {
+    font-size: large;
   }
   .expand ul {
     margin-right: 0;
