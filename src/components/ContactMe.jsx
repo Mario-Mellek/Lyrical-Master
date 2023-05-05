@@ -18,15 +18,13 @@ export default function ContactMe() {
       .join('&');
   }
 
-  const messageSettings = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'LyricalMaster', name, email, phone, message }),
-  };
-
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('/', messageSettings)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'LyricalMaster', name, email, phone, message }),
+    })
       .then(() => {
         alert('Message Sent');
         setEmail(''); setMessage(''); setName(''); setPhone('');
