@@ -52,7 +52,7 @@ The following environment variables should be set in a `.env.local` file in the 
 
 ## Deployment
 
-The app is hosted for free on Netlify: [Click here to visit](https://lyrical-master.netlify.app/){:target="\_blank"}
+The app is hosted for free on Netlify: <a href="https://lyrical-master.netlify.app/" target="_blank">Visit webApp</a>
 
 ## License
 
