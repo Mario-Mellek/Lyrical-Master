@@ -42,7 +42,7 @@ export default function ContactMe() {
         <h1>Contact me</h1>
         <form
           data-netlift='true'
-          name='Lyrical-Master'
+          name='contact'
           method='post'
           onSubmit={handleSubmit}
         >
