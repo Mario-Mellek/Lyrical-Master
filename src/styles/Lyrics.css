@@ -195,6 +195,7 @@ form .form-btn:active {
   }
   .lyrics-wrapper {
     margin: 0 -20px -10px -10px;
+    width: 100%;
   }
   .wideView {
     position: absolute;
@@ -218,5 +219,20 @@ form .form-btn:active {
   }
   .expand-icon {
     display: inline;
+  }
+  .infoWrapper {
+    left: 10vw;
+  }
+  .info-Container {
+    width: 80vw;
+    font-size: 1em;
+    line-height: 30px;
+  }
+  .info-Container p,
+  .info-Container h1 {
+    margin-left: 0.5rem;
+  }
+  .info-Container .close {
+    margin: 0;
   }
 }
