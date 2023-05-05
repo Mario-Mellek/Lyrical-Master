@@ -10,12 +10,6 @@ export default function ContactMe() {
   /* global fetch */
   /* global alert */
 
-  // const messageSettings = {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //   body: encode({ 'form-name': 'LyricalMaster', name, email, phone, message }),
-  // };
-
   function encode(data) {
     return Object.keys(data)
       .map(
@@ -24,13 +18,15 @@ export default function ContactMe() {
       .join('&');
   }
 
+  const messageSettings = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode({ 'form-name': 'LyricalMaster', name, email, phone, message }),
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', name, email, phone, message }),
-    })
+    fetch('/', messageSettings)
       .then(() => {
         alert('Message Sent');
         setEmail(''); setMessage(''); setName(''); setPhone('');
@@ -44,11 +40,11 @@ export default function ContactMe() {
         <h1>Contact me</h1>
         <form
           data-netlify="true"
-          name="contact"
+          name="LyricalMaster"
           method="POST"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name='form-name' value='contact' />
+          <input type="hidden" name='form-name' value='LyricalMaster' />
           <div>
             <label htmlFor="name">Name<CgAsterisk /></label>
             <input
