@@ -23,7 +23,7 @@ export default function ContactMe() {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'LyricalMaster', name, email, phone, message }),
+      body: encode({ 'form-name': 'contact2', name, email, phone, message }),
     })
       .then(() => {
         alert('Message Sent');
@@ -38,11 +38,11 @@ export default function ContactMe() {
         <h1>Contact me</h1>
         <form
           data-netlify="true"
-          name="LyricalMaster"
-          method="POST"
+          name="contact2"
+          // method="POST"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name='form-name' value='LyricalMaster' />
+          <input type="hidden" name='form-name' value='contact2' />
           <div>
             <label htmlFor="name">Name<CgAsterisk /></label>
             <input
