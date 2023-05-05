@@ -27,3 +27,13 @@ textarea {
 .contactForm-btn {
   margin-top: 1.5rem;
 }
+@media screen and (max-width: 760px) {
+  .contactMe-section .map {
+    margin: 0;
+    margin-top: 3vh;
+    width: 95%;
+  }
+  .contactMe-form {
+    width: 100%;
+  }
+}
