@@ -10,6 +10,8 @@ export default function ContactMe() {
   /* global fetch */
   /* global alert */
 
+  //TODO: style map and contactMe-form
+
   function encode(data) {
     return Object.keys(data)
       .map(
@@ -36,11 +38,13 @@ export default function ContactMe() {
     <section className='hero'>
       <div className='description'>
         <h1>Contact me</h1>
+        <br />
         <form
           data-netlify="true"
           name="Lyrical-Master"
           method="POST"
           onSubmit={handleSubmit}
+          className='contactMe-form'
         >
           <input type="hidden" name='form-name' value='Lyrical-Master' />
           <div>
@@ -91,7 +95,15 @@ export default function ContactMe() {
           <button type='submit'>Send</button>
         </form>
       </div>
-      {/* <img className='myImg' src={myImg} alt="My Image" /> */}
+      <iframe
+        className='map'
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.33664985907!2d31.217178984987942!3d30.05955628983808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1683285839015!5m2!1sen!2seg"
+        width="600"
+        height="450"
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade">
+      </iframe>
     </section>
   );
 }
