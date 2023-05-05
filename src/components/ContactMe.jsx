@@ -29,7 +29,7 @@ export default function ContactMe() {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, phone, message }),
+      body: encode({ "form-name": "Lyrics", name, email, phone, message }),
     })
       .then(() => {
         alert('Message Sent');
