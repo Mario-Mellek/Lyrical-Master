@@ -13,7 +13,7 @@ export default function ContactMe() {
   const messageSettings = {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'contact', name, email, phone, message }),
+    body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
   };
 
   function encode(data) {
@@ -33,9 +33,6 @@ export default function ContactMe() {
       })
       .catch((error) => alert(error));
   };
-
-
-
   return (
     <section className='hero'>
       <div className='description'>
