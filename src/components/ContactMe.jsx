@@ -46,7 +46,7 @@ export default function ContactMe() {
         toast.info('Message Sent', toastSettings);
         setEmail(''); setMessage(''); setName(''); setPhone('');
       })
-      .catch((error) => toast.error(`Something went wrong\n${error}`));
+      .catch(() => toast.error('Something went wrong, Please try again', toastSettings));
   }
 
   return (
