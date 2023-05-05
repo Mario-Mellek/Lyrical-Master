@@ -10,11 +10,11 @@ export default function ContactMe() {
   /* global fetch */
   /* global alert */
 
-  // const messageSettings = {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //   body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
-  // };
+  const messageSettings = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode({ 'form-name': 'contact', name, email, phone, message }),
+  };
 
   function encode(data) {
     return Object.keys(data)
@@ -26,28 +26,25 @@ export default function ContactMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
-    })
+    fetch('/', messageSettings)
       .then(() => {
         alert('Message Sent');
         setEmail(''); setMessage(''); setName(''); setPhone('');
       })
       .catch((error) => alert(error));
   };
+
   return (
     <section className='hero'>
       <div className='description'>
         <h1>Contact me</h1>
         <form
           data-netlify='true'
-          name='Lyrical-Master'
+          name='contact'
           method='post'
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name='form-name' value='Lyrical-Master' />
+          <input type="hidden" name='form-name' value='contact' />
           <div>
             <label htmlFor="name">Name<CgAsterisk /></label>
             <input
