@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { CgAsterisk } from 'react-icons/cg';
+import '../styles/ContactMe.css';
+import { TbMessages } from 'react-icons/tb';
 
 export default function ContactMe() {
 
@@ -35,10 +37,10 @@ export default function ContactMe() {
   }
 
   return (
-    <section className='hero'>
+    <section className='hero contactMe-section'>
       <div className='description'>
-        <h1>Contact me</h1>
-        <br />
+        <h1>Contact me<span> <TbMessages /></span></h1>
+        <br /><br />
         <form
           data-netlify="true"
           name="Lyrical-Master"
@@ -48,7 +50,7 @@ export default function ContactMe() {
         >
           <input type="hidden" name='form-name' value='Lyrical-Master' />
           <div>
-            <label htmlFor="name">Name<CgAsterisk /></label>
+            <label htmlFor="name">Name<CgAsterisk className='asterisk' /></label>
             <input
               id='name'
               name='name'
@@ -59,7 +61,7 @@ export default function ContactMe() {
             />
           </div>
           <div>
-            <label htmlFor="email">E-mail<CgAsterisk /></label>
+            <label htmlFor="email">E-mail<CgAsterisk className='asterisk' /></label>
             <input
               id='email'
               name='email'
@@ -76,31 +78,28 @@ export default function ContactMe() {
               name='number'
               type='tel'
               value={phone}
-              pattern='[0-9]{11}'
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="message">Message<CgAsterisk /></label>
+            <label htmlFor="message">Message<CgAsterisk className='asterisk' /></label>
             <textarea
               id='message'
               name='message'
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              cols="30"
-              rows="10"
+              cols="25"
+              rows="5"
             />
           </div>
-          <button type='submit'>Send</button>
+          <button className='contactForm-btn' type='submit'>Send</button>
         </form>
       </div>
       <iframe
         className='map'
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.33664985907!2d31.217178984987942!3d30.05955628983808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1683285839015!5m2!1sen!2seg"
-        width="600"
-        height="450"
-        allowFullScreen=""
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17273.01998483662!2d31.326682109539824!3d30.122550356459897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815963961a195%3A0x7cdcd1f2d3971c77!2sAin%20Shams%2C%20Cairo%20Governorate!5e1!3m2!1sen!2seg!4v1683298220619!5m2!1sen!2seg"
+        allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade">
       </iframe>
