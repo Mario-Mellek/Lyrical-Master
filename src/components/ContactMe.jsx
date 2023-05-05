@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { CgAsterisk } from 'react-icons/cg';
 import '../styles/ContactMe.css';
 import { TbMessages } from 'react-icons/tb';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+
 
 export default function ContactMe() {
 
@@ -10,9 +12,24 @@ export default function ContactMe() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   /* global fetch */
-  /* global alert */
 
-  //TODO: style map and contactMe-form
+  const toastSettings = {
+    position: 'bottom-right',
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: 'dark',
+    transition: Flip,
+  };
+
+  const formPost_settings = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
+  };
+
 
   function encode(data) {
     return Object.keys(data)
@@ -24,16 +41,12 @@ export default function ContactMe() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
-    })
+    fetch('/', formPost_settings)
       .then(() => {
-        alert('Message Sent');
+        toast.info('Message Sent', toastSettings);
         setEmail(''); setMessage(''); setName(''); setPhone('');
       })
-      .catch((error) => alert(error));
+      .catch((error) => toast.error(`Something went wrong\n${error}`));
   }
 
   return (
@@ -103,6 +116,7 @@ export default function ContactMe() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade">
       </iframe>
+      <ToastContainer />
     </section>
   );
 }
