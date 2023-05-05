@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import myImg from '../utils/myImage.jpg';
 import '../styles/AboutMe.css';
+import ContactMe from '../components/ContactMe';
 
 export default function AboutMe() {
   return (
@@ -25,6 +26,8 @@ export default function AboutMe() {
         </div>
         <img className='myImg' src={myImg} alt="My Image" />
       </section>
+      <br />
+      <ContactMe />
     </>
   );
 }
