@@ -235,4 +235,8 @@ form .form-btn:active {
   .info-Container .close {
     margin: 0;
   }
+  .song-lyrics {
+    font-size: 1em;
+    line-height: 30px;
+  }
 }
