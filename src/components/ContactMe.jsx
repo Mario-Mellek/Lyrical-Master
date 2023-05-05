@@ -10,11 +10,11 @@ export default function ContactMe() {
   /* global fetch */
   /* global alert */
 
-  const messageSettings = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'Lyrics', name, email, phone, message }),
-  };
+  // const messageSettings = {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //   body: encode({ 'form-name': 'Lyrics', name, email, phone, message }),
+  // };
 
   function encode(data) {
     return Object.keys(data)
@@ -26,7 +26,11 @@ export default function ContactMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/', messageSettings)
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", name, email, phone, message }),
+    })
       .then(() => {
         alert('Message Sent');
         setEmail(''); setMessage(''); setName(''); setPhone('');
@@ -39,9 +43,9 @@ export default function ContactMe() {
       <div className='description'>
         <h1>Contact me</h1>
         <form
+          data-netlify="true"
           name="Lyrics"
           method="POST"
-          data-netlify="true"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name='form-name' value='Lyrics' />
