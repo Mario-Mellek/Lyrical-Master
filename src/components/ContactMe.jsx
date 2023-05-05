@@ -13,7 +13,7 @@ export default function ContactMe() {
   const messageSettings = {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'contact', name, email, phone, message }),
+    body: encode({ 'form-name': 'Lyrics', name, email, phone, message }),
   };
 
   function encode(data) {
@@ -39,12 +39,12 @@ export default function ContactMe() {
       <div className='description'>
         <h1>Contact me</h1>
         <form
-          data-netlify='true'
-          name='contact'
-          method='post'
+          name="Lyrics"
+          method="POST"
+          data-netlify="true"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name='form-name' value='contact' />
+          <input type="hidden" name='form-name' value='Lyrics' />
           <div>
             <label htmlFor="name">Name<CgAsterisk /></label>
             <input
