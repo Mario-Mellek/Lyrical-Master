@@ -185,5 +185,6 @@ form .form-btn:active {
     margin: 0;
     width: fit-content;
     height: fit-content;
+    font-size: 1.2em;
   }
 }
