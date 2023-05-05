@@ -41,12 +41,12 @@ export default function ContactMe() {
       <div className='description'>
         <h1>Contact me</h1>
         <form
-          data-netlift='true'
-          name='contact'
+          data-netlify='true'
+          name='Lyrical-Master'
           method='post'
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name='form-name' value='Contact' />
+          <input type="hidden" name='form-name' value='Lyrical-Master' />
           <div>
             <label htmlFor="name">Name<CgAsterisk /></label>
             <input
