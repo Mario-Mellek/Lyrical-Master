@@ -37,7 +37,7 @@ Some of the important dependencies used in this app are:
 
 ## APIs
 
-This app uses the LyricsGenuis API from RapidAPI to fetch song lyrics.
+This app uses the LyricsGenuis API from RapidAPI to fetch the song ID, lyrics, and info. it also uses the youtube data API to fetch the song's official video.
 
 ## Environment Variables
 
@@ -52,7 +52,7 @@ The following environment variables should be set in a `.env.local` file in the 
 
 ## Deployment
 
-The app is hosted for free on Netlify: https://lyrical-master.netlify.app/
+The app is hosted for free on Netlify: <a href="https://lyrical-master.netlify.app/" target="_blank">Visit webApp</a>
 
 ## License
 
