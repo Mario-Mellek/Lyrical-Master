@@ -10,11 +10,11 @@ export default function ContactMe() {
   /* global fetch */
   /* global alert */
 
-  const messageSettings = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
-  };
+  // const messageSettings = {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //   body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
+  // };
 
   function encode(data) {
     return Object.keys(data)
@@ -26,7 +26,11 @@ export default function ContactMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/', messageSettings)
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'Lyrical-Master', name, email, phone, message }),
+    })
       .then(() => {
         alert('Message Sent');
         setEmail(''); setMessage(''); setName(''); setPhone('');
