@@ -10,12 +10,17 @@
   margin-right: 5rem;
 }
 .contactMe-form {
-  width: 45%;
+  width: 50%;
   height: fit-content;
-  margin-bottom: 1rem;
+}
+.contactMe-form input {
+  border-radius: 0.4rem;
+  width: 12rem;
 }
 textarea {
+  border-radius: 0.5rem;
   resize: none;
+  width: 12rem;
 }
 .contactMe-form div {
   width: 100%;
